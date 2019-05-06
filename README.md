@@ -1,7 +1,7 @@
 # Semantic version bump task 
 for Azure DevOps Pipelines
 
-Wraps well know [node-semver](https://github.com/npm/node-semver) library `inc()` function, allowing easy version bumping during Azure builds or releases.
+Wraps well known [node-semver](https://github.com/npm/node-semver) library `inc()` function, allowing easy version bumping during Azure builds or releases.
 
 ### Usage
 Version will be read from the environment variable named as the "Version variable name" parameter. 
