@@ -1,7 +1,5 @@
 import * as task from "azure-pipelines-task-lib/task";
 import * as semVer from "semver";
-import { runInContext } from "vm";
-import { version } from "punycode";
 
 let versionVariable: string;
 let versionValue: string;
@@ -10,7 +8,6 @@ let preId: string;
 let semanticVersion: semVer.SemVer;
 
 function prepare(): void {
-
 	versionVariable = task.getInput("VersionVariable", true);
 	incrementLevel = <semVer.ReleaseType>task.getInput("IncrementLevel", true);
 	preId = task.getInput("PreId", false);
@@ -21,17 +18,21 @@ function prepare(): void {
 
 	task.debug(`Using variable "${versionVariable}"`);
 	task.debug(`Increment level is "${incrementLevel}" with preId "${preId}"`);
-	task.debug(`Current version value is "${versionValue}"`);
+	console.log(`Current version value is "${versionValue}"`);
 }
 
 function bump(): void {
-	task.debug(`Bumping ${incrementLevel} version`);
+	if (!semVer.valid(versionValue)) {
+		throw new Error(`'${versionValue}' is not a valid semantic version.`);
+	}
+	console.log(`Bumping ${incrementLevel} version`);
 	semanticVersion = new semVer.SemVer(versionValue);
 	semanticVersion.inc(incrementLevel, preId);
 	versionValue = semanticVersion.version;
+	console.log(`New version is ${versionValue}`);
 }
 
-function update(): void{
+function update(): void {
 	task.setVariable(versionVariable, versionValue);
 	task.setResult(task.TaskResult.Succeeded, `New version "${versionValue}" was saved back to "${versionVariable}" variable`);
 }
@@ -41,5 +42,5 @@ try {
 	bump();
 	update();
 } catch (err) {
-	task.setResult(task.TaskResult.Failed, err);
+	task.setResult(task.TaskResult.Failed, `Can't increment version: ${err}`);
 }

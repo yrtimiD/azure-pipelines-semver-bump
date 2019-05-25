@@ -7,5 +7,5 @@
     "rulesDirectory": [],
     "rules": {
       "indent": [true, "tabs"]
-    },
+    }
 }

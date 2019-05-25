@@ -1,0 +1,68 @@
+{
+  "manifestVersion": 1,
+  "id": "semver-bump-task",
+  "name": "Semver version bump",
+  "version": "1.0.0",
+  "publisher": "yrtimid",
+  "public": false,
+  "targets": [{
+    "id": "Microsoft.VisualStudio.Services"
+  }],
+  "description": "Bumps (increments) semantic version",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "tags": [
+    "semver",
+    "semantic",
+    "version",
+    "bump",
+    "increment"
+  ],
+  "icons": {
+    "default": "icon_128.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yrtimiD/azure-pipelines-semver-bump"
+  },
+  "links": {
+    "support": {
+      "uri": "https://github.com/yrtimiD/azure-pipelines-semver-bump/issues"
+    }
+  },
+  "content": {
+    "details": {
+      "path": "README.md"
+    }
+  },
+  "screenshots": [{
+      "path": "screenshots/screenshot1.png"
+    },
+    {
+      "path": "screenshots/screenshot2.png"
+    },
+    {
+      "path": "screenshots/screenshot3.png"
+    }
+  ],
+  "files": [{
+    "path": "semver-bump-task"
+  }, {
+    "path": "screenshots",
+    "addressable": true
+  }],
+  "contributions": [{
+    "id": "semver-bump-task",
+    "type": "ms.vss-distributed-task.task",
+    "targets": [
+      "ms.vss-distributed-task.tasks"
+    ],
+    "properties": {
+      "name": "semver-bump-task"
+    }
+  }],
+  "galleryFlags": [
+    "Preview"
+  ]
+}

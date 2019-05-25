@@ -8,11 +8,11 @@
   "category": "Utility",
   "author": "Dmitry Gurovich",
   "version": {
-    "Major": 0,
-    "Minor": 1,
+    "Major": 1,
+    "Minor": 0,
     "Patch": 0
   },
-  "instanceNameFormat": "Semver bump $(VersionVariable)",
+  "instanceNameFormat": "Semver bump $(IncrementLevel) $(VersionVariable)",
   "inputs": [
     {
       "name": "VersionVariable",
@@ -46,7 +46,7 @@
       "defaultValue": "rc",
       "required": false,
       "helpMarkDown": "Identifier to be used to prefix premajor, preminor, prepatch or prerelease version increments.",
-      "visibleRule": "IncrementLevel = premajor || IncrementLevel = preminot || IncrementLevel = prepatch || IncrementLevel = prerelease"
+      "visibleRule": "IncrementLevel = premajor || IncrementLevel = preminor || IncrementLevel = prepatch || IncrementLevel = prerelease"
     }
   ],
   "execution": {

@@ -1,10 +1,19 @@
-# Semantic version bump task 
-for Azure DevOps Pipelines
+# Semantic Version Bump 
+Azure DevOps Pipelines task for Builds and Releases
 
-Wraps well known [node-semver](https://github.com/npm/node-semver) library `inc()` function, allowing easy version bumping during Azure builds or releases.
+Bumps (increments) version saved in an environment variable.
+
+Wraps well known [node-semver](https://github.com/npm/node-semver) library `inc()` function.
 
 ### Usage
-Version will be read from the environment variable named as the "Version variable name" parameter. 
-So variable with this name must be already defined.
+* Define and populate variable which will hold a version
+* Add a task to your pipeline
+* Put the name of your version variable into "Version variable name" field
+* Select desired "Increment level"
+* Optionally: change "pre id" prefix
 
-Incremented version will go back to the same variable, and can be used in any subsequent build step.
+Version value is read from the configured environment variable, incremented accordingly and written back to the same variable.
+
+![Task in a pipeline](screenshots/screenshot3.png)
+
+![Configuration](screenshots/screenshot2.png)
