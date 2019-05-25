@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "semver-bump-task",
   "name": "Semver version bump",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "yrtimid",
   "public": false,
   "targets": [{
@@ -63,6 +63,5 @@
     }
   }],
   "galleryFlags": [
-    "Preview"
   ]
 }
