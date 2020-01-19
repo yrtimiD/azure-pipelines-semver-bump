@@ -14,6 +14,4 @@ Wraps well known [node-semver](https://github.com/npm/node-semver) library `inc(
 
 Version value is read from the configured environment variable, incremented accordingly and written back to the same variable.
 
-![Task in a pipeline](screenshots/screenshot3.png)
-
-![Configuration](screenshots/screenshot2.png)
+![Configuration](screenshots/screenshot1.png)
