@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "semver-bump-task",
   "name": "Semver version bump",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "yrtimid",
   "public": false,
   "targets": [{
